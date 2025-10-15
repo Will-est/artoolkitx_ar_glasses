@@ -88,7 +88,15 @@ then
     source /etc/os-release
     # Windows Subsystem for Linux identifies itself as 'Linux'. Additional test required.
     if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null ; then
-        OS='Windows'
+        # If we're on WSL, default to Windows semantics unless the user explicitly requested a Linux build.
+        # This prevents silent skipping when calling './build.sh linux ...' under WSL2.
+        echo "Detected WSL environment."
+        if [ -z "$BUILD_LINUX" ]; then
+            OS='Windows'
+            echo "Treating WSL as Windows host (no explicit 'linux' target requested)."
+        else
+            echo "Honoring explicit Linux target under WSL."
+        fi
     fi
 elif [ "$OS" = "Darwin" ]
 then
