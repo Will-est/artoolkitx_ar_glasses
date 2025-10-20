@@ -22,3 +22,16 @@ For experienced developers wanting to quickly make use of the SDK, please read t
 * Join our forum and chat with other developers: https://forums.artoolkitx.org
 * Report and help with issues: https://github.com/artoolkitx/artoolkitx/issues
 * Follow us on social media: https://twitter.com/artoolkitx and https://www.facebook.com/artoolkitX/
+
+
+
+## Will's Additions to Setup Stuff
+
+# Pre-Setup:
+**Note**: You need to be in some kind of linux environment for this. WSL does work(this whole project was made with that in mind)
+
+Run ```./dependency_install.sh``` inside of the 'scripts' directory to install needed dependencies(if there is anything missing, feel free to add it to the list)
+
+Before you can go to [Quick start](Quick%20start.md), you are going to neeed to go to [https://www.artoolkitx.org/docs/downloads/](this website) and go to the version of artoolkitx that you want and download the one that says "artoolkitx-lib_1.1.22_{your system}.deb". The [Quick start](Quick%20start.md) mentions this too, but I think I explain it simpler here.
+
+After 
